@@ -2,7 +2,7 @@ const { proxy } = require('./proxy');
 
 exports.handler = async ({ body }) => {
     
-    const proxyRes = await proxy(body);
+    const proxyRes = await proxy(JSON.parse(body));
 
     const response = {
         statusCode: proxyRes.status,
